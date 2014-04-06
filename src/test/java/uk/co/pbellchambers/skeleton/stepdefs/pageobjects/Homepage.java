@@ -26,7 +26,7 @@ public class Homepage {
         driver.get(pageUrl);
     }
 
-    public void doGoogleSearch(String searchText){
+    public void doSearch(String searchText){
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(searchField));
 
