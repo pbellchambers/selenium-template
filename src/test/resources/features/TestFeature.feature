@@ -1,15 +1,13 @@
 Feature: Test Feature
-  Demonstrate basic google search using cucumber datatable functionality and selenium
-  Demonstrate selenium scenario outline
+  Demonstrate basic cucumber/selenium functionality
 
-
-  Scenario: Search Google
-    Given I am on the Google homepage
+  Scenario: Search
+    Given I am on the search homepage
     When I search for How to make cheese
     Then I should see wikiHow
 
-  Scenario Outline: Display Eligibility Category
-    Given I am on the Google homepage
+  Scenario Outline: More search
+    Given I am on the search homepage
     When I search for <Search>
     Then I should see <Result>
 
