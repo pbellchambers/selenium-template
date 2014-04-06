@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    def cucumberVersion = "1.1.+"
+    testCompile("joda-time:joda-time:2.+")
+    testCompile("junit:junit:4.+")
+    testCompile("org.seleniumhq.selenium:selenium-java:2.+")
+    testCompile("info.cukes:cucumber-core:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-junit:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-java:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-picocontainer:${cucumberVersion}")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
