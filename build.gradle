@@ -1,28 +1,55 @@
+apply plugin: 'cucumber'
+apply plugin: 'java'
+apply plugin: 'idea'
+
 buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
     }
-}
 
-apply plugin: 'java'
+    dependencies {
+        classpath 'com.github.samueltbrown:gradle-cucumber-plugin:0.5'
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
+idea{
+    module {
+        testSourceDirs += file('src/cucumber/java')
+        scopes.TEST.plus += configurations.cucumberCompile
+    }
+}
 
 dependencies {
-    def cucumberVersion = "1.1.+"
-    testCompile("joda-time:joda-time:2.+")
-    testCompile("junit:junit:4.+")
-    testCompile("org.seleniumhq.selenium:selenium-java:2.+")
-    testCompile("info.cukes:cucumber-core:${cucumberVersion}")
-    testCompile("info.cukes:cucumber-junit:${cucumberVersion}")
-    testCompile("info.cukes:cucumber-java:${cucumberVersion}")
-    testCompile("info.cukes:cucumber-picocontainer:${cucumberVersion}")
+    def cucumberVersion = "1.1.5"
+    cucumberCompile("joda-time:joda-time:2.+")
+    cucumberCompile("junit:junit:4.11")
+    cucumberCompile("org.seleniumhq.selenium:selenium-java:2.+")
+    cucumberCompile("info.cukes:cucumber-core:${cucumberVersion}")
+    cucumberCompile("info.cukes:cucumber-junit:${cucumberVersion}")
+    cucumberCompile("info.cukes:cucumber-java:${cucumberVersion}")
+    cucumberCompile("info.cukes:cucumber-picocontainer:${cucumberVersion}")
+
+    cucumberRuntime("info.cukes:cucumber-java:${cucumberVersion}")
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
+}
+
+cucumber {
+    formats = [ "pretty",
+                "html:${projectDir}/build/cucumber-reports/html" as String,
+                "usage:${projectDir}/build/cucumber-reports/usage.json" as String,
+                "rerun:${projectDir}/build/cucumber-reports/rerun.json" as String,
+                "json:${projectDir}/build/cucumber-reports/json/json.json" as String,
+                "junit:${projectDir}/build/cucumber-reports/junit.junit" as String]
+    tags = ["~@wip"]
+    monochrome = false
+    strict = false
+    dryRun = false
 }

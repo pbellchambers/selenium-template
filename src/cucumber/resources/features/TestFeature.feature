@@ -16,3 +16,9 @@ Feature: Test Feature
     |slashdot   |Slashdot: News for nerds, stuff that matters |
     |reddit blog|blog.reddit -- what's new on reddit          |
     |wikipedia  |Wikipedia, the free encyclopedia             |
+
+  @wip
+  Scenario: Work in progress test
+    Given A scenario that is tagged as not to be run
+    When I run cucumber
+    Then this scenario should not be run
