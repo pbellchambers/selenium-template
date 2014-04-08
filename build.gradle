@@ -25,8 +25,7 @@ idea {
 }
 
 dependencies {
-    def cucumberVersion = "1.1.5"
-    cucumberCompile("joda-time:joda-time:2.+")
+    def cucumberVersion = "1.1.6"
     cucumberCompile("junit:junit:4.11")
     cucumberCompile("org.seleniumhq.selenium:selenium-java:2.+")
     cucumberCompile("info.cukes:cucumber-core:${cucumberVersion}")
