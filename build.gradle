@@ -1,4 +1,4 @@
-apply plugin: 'cucumber'
+apply plugin: 'com.github.samueltbrown.cucumber'
 apply plugin: 'java'
 apply plugin: 'idea'
 
@@ -6,10 +6,11 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
-        classpath 'com.github.samueltbrown:gradle-cucumber-plugin:0.5'
+        classpath('com.github.samueltbrown:gradle-cucumber-plugin:0.7')
     }
 }
 
@@ -25,7 +26,7 @@ idea {
 }
 
 dependencies {
-    def cucumberVersion = "1.1.6"
+    def cucumberVersion = "1.1.8"
     cucumberCompile("junit:junit:4.11")
     cucumberCompile("org.seleniumhq.selenium:selenium-java:2.+")
     cucumberCompile("info.cukes:cucumber-core:${cucumberVersion}")

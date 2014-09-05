@@ -12,8 +12,9 @@ import org.junit.runner.RunWith;
                 "rerun:build/cucumber-reports/rerun.json",
                 "json:build/cucumber-reports/json.json",
                 "junit:build/cucumber-reports/junit.junit"},
-        features = "src/test/resources/features/",
-        glue = "uk.co.pbellchambers.skeleton.stepdefs")
+        features = "src/cucumber/resources/features/",
+        glue = "uk.co.pbellchambers.skeleton.stepdefs",
+        tags = "~@wip")
 public class RunCukesTest {
 
 }

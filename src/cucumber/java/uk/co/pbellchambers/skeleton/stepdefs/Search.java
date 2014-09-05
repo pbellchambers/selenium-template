@@ -27,12 +27,12 @@ public class Search {
         homepage.open();
     }
 
-    @When("^I search for (.*)$")
+    @When("^I search for \"([^\"]*)\"$")
     public void I_search_for(String searchText) throws Throwable {
         homepage.doSearch(searchText);
     }
 
-    @Then("^I should see (.*)$")
+    @Then("^I should see \"([^\"]*)\"$")
     public void I_should_see_Result(String expectedResult) throws Throwable {
         resultsPage = PageFactory.initElements(webDriver, ResultsPage.class);
         assertTrue(resultsPage.getBodyText().contains(expectedResult));
