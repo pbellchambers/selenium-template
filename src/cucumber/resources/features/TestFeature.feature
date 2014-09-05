@@ -1,15 +1,17 @@
-Feature: Test Feature
+Feature: Test Search Feature
   Demonstrate basic cucumber/selenium functionality
 
+  @wip
   Scenario: Search
     Given I am on the search homepage
-    When I search for How to make cheese
-    Then I should see wikiHow
+    When I search for "How to make cheese"
+    Then I should see "wikiHow"
 
+  @wip
   Scenario Outline: More search
     Given I am on the search homepage
-    When I search for <Search>
-    Then I should see <Result>
+    When I search for "<Search>"
+    Then I should see "<Result>"
 
   Examples:
     |Search     |Result                                       |
