@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.awt.*;
+import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 public class PdfPage {
 
     protected WebDriver driver;
-    private String pageUrl = "file:///C:/Users/tregu_000/Documents/dev/test-skeleton/src/main/html/testpdf2.html";
+    private String pageUrl = "file:///C:/file-location/test-skeleton/src/main/html/testpdf2.html";
 
     @FindBy(id="iframepdf")
     private WebElement iframePdf;
