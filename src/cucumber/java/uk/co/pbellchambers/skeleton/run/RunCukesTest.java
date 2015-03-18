@@ -6,12 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        format = {  "pretty",
-                "html:build/cucumber-reports/html",
-                "usage:build/cucumber-reports/usage.json",
-                "rerun:build/cucumber-reports/rerun.json",
-                "json:build/cucumber-reports/json.json",
-                "junit:build/cucumber-reports/junit.junit"},
+        plugin = {  "pretty",
+                    "html:build/cucumber-reports/html",
+                    "usage:build/cucumber-reports/usage.json",
+                    "rerun:build/cucumber-reports/rerun.json",
+                    "json:build/cucumber-reports/json.json",
+                    "junit:build/cucumber-reports/junit.junit"},
         features = "src/cucumber/resources/features/",
         glue = "uk.co.pbellchambers.skeleton.stepdefs",
         tags = "~@wip")
