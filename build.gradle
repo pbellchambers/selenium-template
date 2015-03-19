@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath('com.github.samueltbrown:gradle-cucumber-plugin:0.7')
+        classpath('com.github.samueltbrown:gradle-cucumber-plugin:0.8')
     }
 }
 
@@ -21,13 +21,13 @@ repositories {
 idea {
     module {
         testSourceDirs += file('src/cucumber/java')
-        scopes.TEST.plus += configurations.cucumberCompile
+        scopes.TEST.plus += [configurations.cucumberCompile]
     }
 }
 
 dependencies {
-    def cucumberVersion = "1.1.8"
-    cucumberCompile("junit:junit:4.11")
+    def cucumberVersion = "1.2.2"
+    cucumberCompile("junit:junit:4.12")
     cucumberCompile("org.seleniumhq.selenium:selenium-java:2.+")
     cucumberCompile("info.cukes:cucumber-core:${cucumberVersion}")
     cucumberCompile("info.cukes:cucumber-junit:${cucumberVersion}")
@@ -35,10 +35,6 @@ dependencies {
     cucumberCompile("info.cukes:cucumber-picocontainer:${cucumberVersion}")
 
     cucumberRuntime("info.cukes:cucumber-java:${cucumberVersion}")
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
 }
 
 cucumber {
