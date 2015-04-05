@@ -5,4 +5,8 @@ jdk:
 
 script: gradle cucumber
 
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"script: gradle cucumber
+
 archive: true
