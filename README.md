@@ -1,4 +1,4 @@
-#test-skeleton [![Build Status](https://travis-ci.org/pbellchambers/test-skeleton.svg?branch=master)](https://travis-ci.org/pbellchambers/test-skeleton)
+#test-skeleton [![Build Status](https://api.shippable.com/projects/5521b1bc5ab6cc1352b899ac/badge?branchName=master)](https://app.shippable.com/projects/5521b1bc5ab6cc1352b899ac/builds/latest)
 
 A skeleton project for cucumber/selenium tests
 
