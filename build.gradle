@@ -44,7 +44,7 @@ cucumber {
                 "rerun:${projectDir}/build/cucumber-reports/rerun.json" as String,
                 "json:${projectDir}/build/cucumber-reports/json/json.json" as String,
                 "junit:${projectDir}/build/cucumber-reports/junit.junit" as String,
-                "junit:${projectDir}/shippable/testresults/cucumberResults.junit" as String]
+                "junit:${projectDir}/shippable/testresults/cucumberResults.xml" as String]
     tags = ["~@wip"]
     monochrome = false
     strict = false
