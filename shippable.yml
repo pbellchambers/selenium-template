@@ -3,7 +3,7 @@ language: java
 jdk:
   - oraclejdk8
 
-script: gradle cucumber
+script: gradle clean cucumber -DisBrowserStackTest=false -DisMobileTest=false -Dtags="@all"
 
 before_install:
   - "export DISPLAY=:99.0"

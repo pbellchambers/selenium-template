@@ -26,27 +26,31 @@ idea {
 }
 
 dependencies {
-    def cucumberVersion = "1.2.2"
-    cucumberCompile("junit:junit:4.12")
-    cucumberCompile("org.seleniumhq.selenium:selenium-java:2.+")
-    cucumberCompile("info.cukes:cucumber-core:${cucumberVersion}")
-    cucumberCompile("info.cukes:cucumber-junit:${cucumberVersion}")
-    cucumberCompile("info.cukes:cucumber-java:${cucumberVersion}")
-    cucumberCompile("info.cukes:cucumber-picocontainer:${cucumberVersion}")
+    cucumberCompile('junit:junit:4.+')
+    cucumberCompile('org.seleniumhq.selenium:selenium-java:2.+')
+    cucumberCompile('info.cukes:cucumber-core:1.2.+')
+    cucumberCompile('info.cukes:cucumber-junit:1.2.+')
+    cucumberCompile('info.cukes:cucumber-java:1.2.+')
+    cucumberCompile('info.cukes:cucumber-picocontainer:1.2.+')
+    cucumberCompile('org.slf4j:slf4j-api:1.7.+')
+    cucumberCompile('org.slf4j:slf4j-simple:1.7.+')
 
-    cucumberRuntime("info.cukes:cucumber-java:${cucumberVersion}")
+    cucumberRuntime("info.cukes:cucumber-java:1.2.+")
 }
 
 cucumber {
+    System.setProperty('cucumber.rootDir', projectDir.absolutePath)
+    jvmOptions { systemProperties System.getProperties() }
+    monochrome = true
+    tags = [System.getProperty('tags')]
     formats = [ "pretty",
-                "html:${projectDir}/build/cucumber-reports/html" as String,
-                "usage:${projectDir}/build/cucumber-reports/usage.json" as String,
-                "rerun:${projectDir}/build/cucumber-reports/rerun.json" as String,
-                "json:${projectDir}/build/cucumber-reports/json/json.json" as String,
-                "junit:${projectDir}/build/cucumber-reports/junit.junit" as String,
-                "junit:${projectDir}/shippable/testresults/cucumberResults.xml" as String]
-    tags = ["~@wip"]
-    monochrome = false
+                "html:build/cucumber-reports/html" as String,
+                "usage:build/cucumber-reports/usage.json" as String,
+                "rerun:build/cucumber-reports/rerun.json" as String,
+                "json:build/cucumber-reports/json.json" as String,
+                "junit:build/cucumber-reports/junit.junit" as String,
+                "junit:shippable/testresults/cucumberResults.xml" as String]
+    monochrome = true
     strict = false
     dryRun = false
 }

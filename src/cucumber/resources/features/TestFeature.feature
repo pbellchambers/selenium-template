@@ -1,3 +1,4 @@
+@all
 Feature: Test Search Feature
     Demonstrate basic cucumber/selenium functionality
 
