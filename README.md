@@ -7,5 +7,5 @@ A skeleton project for cucumber/selenium tests
 The project is run using gradle (tested with v2.4):
 
 ```
-gradle cucumber
+gradle cucumber -DisBrowserStackTest=false -DisMobileTest=false -Dtags="~@wip"
 ```
