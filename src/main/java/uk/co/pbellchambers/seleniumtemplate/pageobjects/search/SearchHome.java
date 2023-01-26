@@ -1,23 +1,23 @@
-package uk.co.pbellchambers.skeleton.pageobjects.website;
+package uk.co.pbellchambers.seleniumtemplate.pageobjects.search;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import uk.co.pbellchambers.skeleton.pageobjects.AbstractPage;
+import uk.co.pbellchambers.seleniumtemplate.pageobjects.AbstractPage;
 
-public class HomePage extends AbstractPage<HomePage> {
+public class SearchHome extends AbstractPage<SearchHome> {
 
-    @FindBy(id="search_form_input_homepage")
+    @FindBy(id = "searchbox_input")
     private WebElement searchField;
 
-    @FindBy(id="search_button_homepage")
+    @FindBy(id = "search_button_homepage")
     private WebElement searchButton;
 
-    public HomePage(WebDriver driver) {
+    public SearchHome(WebDriver driver) {
         super(driver);
     }
 
-    public void doSearch(String searchText){
+    public void doSearch(String searchText) {
         waitForElementToBeVisible(searchField);
 
         searchField.clear();

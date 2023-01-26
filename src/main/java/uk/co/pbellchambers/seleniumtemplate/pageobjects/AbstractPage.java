@@ -1,7 +1,7 @@
-package uk.co.pbellchambers.skeleton.pageobjects;
+package uk.co.pbellchambers.seleniumtemplate.pageobjects;
 
 import org.openqa.selenium.WebDriver;
-import uk.co.pbellchambers.skeleton.support.WebDriverUtil;
+import uk.co.pbellchambers.seleniumtemplate.util.WebDriverUtil;
 
 import static org.junit.Assert.assertTrue;
 
@@ -22,7 +22,7 @@ public abstract class AbstractPage<T> extends WebDriverUtil {
         return true;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return driver.getTitle();
     }
 }
